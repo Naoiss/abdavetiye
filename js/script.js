@@ -18,6 +18,27 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   }
+
+  // Scroll indicator functionality
+  const scrollIndicator = document.getElementById('scrollIndicator');
+  if (scrollIndicator) {
+    // Hide scroll indicator when user scrolls down
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 100) {
+        scrollIndicator.style.opacity = '0';
+      } else {
+        scrollIndicator.style.opacity = '1';
+      }
+    });
+    
+    // Scroll down when indicator is clicked
+    scrollIndicator.addEventListener('click', function() {
+      window.scrollTo({
+        top: window.innerHeight,
+        behavior: 'smooth'
+      });
+    });
+  }
   
   // Fade-in animation for elements as they come into view
   const fadeElements = document.querySelectorAll('.fade-in');
