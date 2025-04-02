@@ -23,30 +23,22 @@ html {
   height: 100%;
 }
 
-body {
-  /* Layout and Font */
-  font-family: var(--font-body);
-  color: var(--text-color);
-  line-height: 1.6;
-  min-height: 100vh; /* Ensure body takes at least full viewport height */
+body:before {
+  content: "";
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
   width: 100%;
-
-  /* --- Background Image Configuration --- */
-  background-color: var(--secondary-color); /* Fallback color */
-  background-image: url('../images/cerceve.jpeg'); /* Path to your image */
-  background-size: cover; /* Scale image to cover the element */
-  background-position: center center; /* Center the image */
-  background-repeat: no-repeat; /* Prevent tiling */
-  background-attachment: fixed; /* Make background static (fixed) by default (for desktop) */
-  /* WARNING: 'fixed' can cause issues on mobile */
-
-  /* Scrollbar and Stacking Context */
-  overflow-y: scroll; /* Always show scrollbar to prevent layout shifts */
-  scrollbar-width: thin; /* Firefox scrollbar */
-  scrollbar-color: var(--primary-color) var(--secondary-color); /* Firefox scrollbar */
-  position: relative; /* Needed for potential absolute/fixed children */
-  z-index: 1; /* Ensure body content is above potential pseudo-elements */
+  height: 100%;
+  z-index: -10;
+  background: url('../images/cerceve.jpeg') no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
+
 
 
 
